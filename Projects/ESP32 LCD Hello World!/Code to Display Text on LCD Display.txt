@@ -1,0 +1,32 @@
+#include <Wire.h>
+#include <LiquidCrystal_I2C.h>
+
+// set LCD address, number of columns and rows
+LiquidCrystal_I2C lcd(0x27, 20, 4);
+// if you don't know your display address, run an I2C scanner sketch
+
+void setup(){
+  // initialize LCD
+  lcd.init();
+  // turn on LCD backlight!                   
+}
+
+void loop()
+{
+  //Delay to slow the display
+  delay(1000);
+  //Turns on backlight
+  lcd.backlight();
+  //For loop to animate movement of text on display (vertically from top to bottom)
+  for (int i = 0; i <= 3; i++)
+  {
+    lcd.setCursor(0,i);
+    lcd.print("Hello World!!");
+    delay(1500);
+    lcd.clear();
+  }
+  //Delay to slow the sidplay
+  delay(1000);
+  //Turns off backlight
+  lcd.noBacklight();
+}

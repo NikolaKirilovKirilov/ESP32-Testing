@@ -1,0 +1,5 @@
+ESP32 - LCD Board
+  GND - GND
+  VIN - VCC
+  D21 - SDA
+  D22 - SCL
